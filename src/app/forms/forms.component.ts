@@ -22,7 +22,7 @@ export class FormsComponent implements OnInit {
 
   onSubmit(isValid:boolean|null){
       if(isValid){
-        let newCandidate = new Candidate(this.candidate.firstName, this.candidate.lastName, this.candidate.email, this.candidate.javascript,this.candidate.skillLevel, this.candidate.salary,this.candidate.preferRemote)
+        let newCandidate = {...this.candidate};
         this.formVals = JSON.stringify(this.candidate);
         this.candidates.push(newCandidate)
         console.log(this.candidates);
