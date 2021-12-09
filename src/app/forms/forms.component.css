@@ -1,0 +1,7 @@
+.candidateFrm input.ng-invalid.ng-dirty{
+    background-color: red;
+}
+
+.candidateFrm input.ng-valid.ng-dirty{
+    background-color: green;
+}

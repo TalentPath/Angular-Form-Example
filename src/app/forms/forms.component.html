@@ -1,0 +1,47 @@
+<h1 class="text-center">Candidate Form</h1>
+
+<form class="row g-3 mt-2 candidateFrm" #candidateFrm="ngForm" (ngSubmit)="onSubmit(candidateFrm.valid)">
+    <div class="col-md-4">
+      <label for="firstName" class="form-label">First name</label>
+      <input type="text" name="firstName" class="form-control" id="firstName" value="" [(ngModel)]="candidate.firstName" required>
+    </div>
+    <div class="col-md-4">
+      <label for="lastName" class="form-label">Last name</label>
+      <input type="text" name="lastName" class="form-control" id="lastName" value="" [(ngModel)]="candidate.lastName"  required>
+    </div>
+    <div class="col-md-4">
+      <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" id="email" [(ngModel)]="candidate.email"  required email>
+    </div>
+    <div class="col-md-3">
+        <label for="javascript" class="form-label">JavaScript Framework/Library</label>
+        <select class="form-select" name="javascript" id="javascript" [(ngModel)]="candidate.javascript"  required>
+          <option *ngFor="let framework of frameworks" value="framework">{{framework}}</option>
+        </select>      
+      </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="skillLevel">Skill Level</label>
+            <input type="range" name="skillLevel" max="100" min="1" class="form-range" id="skillLevel" [(ngModel)]="candidate.skillLevel" 
+                name="skillLevel" >
+        </div>
+    </div>
+   
+    <div class="col-md-3">
+      <label for="salary" class="form-label">Preferred Salary</label>
+      <input type="number" class="form-control" name="salary" id="salary" [(ngModel)]="candidate.salary">
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="preferRemote" value="" id="preferRemote" [(ngModel)]="candidate.preferRemote">
+        <label class="form-check-label" for="preferRemote">
+          Prefer Remote Work?
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit" [disabled]="candidateFrm.invalid">Submit form</button>
+    </div>
+  </form>
+
+  <div>Output: {{formVals}}</div>

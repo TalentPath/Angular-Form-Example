@@ -1,0 +1,19 @@
+<h1>Welcome</h1>
+
+<div class="counter">
+    <p>Youve clicked <span (click)="countClick()" [ngStyle]="{'font-weight':'bold'}">this</span> {{counter}} times</p>
+</div>
+
+<div class="two-way">
+    <input type="text" [(ngModel)]="statement">
+    You typed: {{statement}}
+</div>
+
+<div [ngSwitch]="statement">
+    <div *ngSwitchCase="'hello'">Well Hello There!</div>
+    <div *ngSwitchCase="'goodbye'">Have a good day!</div>
+    <div *ngSwitchCase="'see ya'">Wouldn't want to be ya!</div>
+    <div *ngSwitchCase="'no'">Why not?</div>
+    <div *ngSwitchCase="'yes'">Lets do it!</div>
+    <div *ngSwitchDefault>This is Default</div>
+  </div>
